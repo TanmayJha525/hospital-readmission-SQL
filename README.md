@@ -1,13 +1,13 @@
  # 🏥 Hospital Readmission Risk Analysis
 
-Analysed 100,000+ patient records from the UCI Hospital Readmission dataset using **MySQL** to uncover risk patterns in early hospital readmissions. The project aims to identify high-risk groups, optimize treatment plans, and reduce hospital inefficiencies: through SQL queries.
+Analysed 100,000+ patient records from the UCI Hospital Readmission dataset using **MySQL** to uncover risk patterns in early hospital readmissions. The project aims to identify high-risk groups, optimise treatment plans, and reduce hospital inefficiencies through SQL queries.
 
 ---
 
 ## Objectives
 
 - Identify departments and diagnoses with high readmission rates
-- Analyze age groups and medication counts linked to readmission risk
+- Analyse age groups and medication counts linked to readmission risk
 - Provide data-driven insights to improve patient care and reduce costs
 - Showcase advanced SQL querying with real healthcare data
 
