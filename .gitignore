@@ -1,0 +1,27 @@
+# Ignore system/macOS files
+.DS_Store
+
+# Ignore Python/virtual environment files (if added later)
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+
+# Ignore MySQL temporary files (if exported)
+*.sql~
+*.tmp
+*.log
+
+# Ignore data backups or export logs
+*.bak
+*.swp
+*.swo
+
+# Ignore notebook checkpoints (in case you use Jupyter later)
+.ipynb_checkpoints/
+
+# Ignore CSV files if they’re too large — OPTIONAL
+# Uncomment the next line if you don’t want to push the data
+# data/*.csv
