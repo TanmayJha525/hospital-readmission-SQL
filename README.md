@@ -1,6 +1,6 @@
- # 🏥 Hospital Readmission Risk Analysis (SQL-Only)
+ # 🏥 Hospital Readmission Risk Analysis
 
-Analyzed 100,000+ patient records from the UCI Hospital Readmission dataset using **MySQL** to uncover risk patterns in early hospital readmissions. The project aims to identify high-risk groups, optimize treatment plans, and reduce hospital inefficiencies — all through clean, performant SQL queries.
+Analysed 100,000+ patient records from the UCI Hospital Readmission dataset using **MySQL** to uncover risk patterns in early hospital readmissions. The project aims to identify high-risk groups, optimize treatment plans, and reduce hospital inefficiencies — all through clean, performant SQL queries.
 
 ---
 
@@ -38,7 +38,9 @@ Analyzed 100,000+ patient records from the UCI Hospital Readmission dataset usin
 
 ```sql
 
-Top 10 Departments by 30-Day Readmission Rate
+
+ Top 10 Departments by 30-Day Readmission Rate
+
 
 SELECT 
   medical_specialty,
@@ -53,7 +55,8 @@ LIMIT 10;
 
 
  Age Group vs Readmission Risk
- 
+
+
 SELECT 
   age,
   COUNT(*) AS total_patients,
@@ -63,7 +66,9 @@ FROM patients
 GROUP BY age
 ORDER BY risk_pct DESC;
 
-Longest Average Stay by Diagnosis
+
+ Longest Average Stay by Diagnosis
+
 
 SELECT 
   diag_1 AS diagnosis_code,
@@ -75,9 +80,11 @@ HAVING patient_count > 50
 ORDER BY avg_days DESC
 LIMIT 10;
 
- Insulin Usage vs Readmission Risk
- 
- SELECT 
+
+  Insulin Usage vs Readmission Risk
+
+
+SELECT 
   insulin,
   COUNT(*) AS total_patients,
   SUM(CASE WHEN readmitted = '<30' THEN 1 ELSE 0 END) AS readmitted_30,
@@ -86,7 +93,9 @@ FROM patients
 GROUP BY insulin
 ORDER BY readmission_rate DESC;
 
-Number of Medications vs Readmission Risk
+
+ Number of Medications vs Readmission Risk
+
 
 SELECT 
   num_medications,
@@ -99,8 +108,10 @@ HAVING total_cases > 50
 ORDER BY readmit_rate DESC
 LIMIT 10;
 
+
  Patients with Frequent Readmissions
- 
+
+
  SELECT 
   patient_nbr,
   COUNT(*) AS visit_count,
@@ -111,7 +122,9 @@ HAVING short_term_readmits >= 2
 ORDER BY short_term_readmits DESC
 LIMIT 10;
 
-Lab Procedure Count vs Readmission Risk
+
+ Lab Procedure Count vs Readmission Risk
+
 
 SELECT 
   num_lab_procedures,
@@ -124,7 +137,9 @@ HAVING patient_count > 50
 ORDER BY readmit_rate DESC
 LIMIT 10;
 
-Discharge Disposition Impact
+
+ Discharge Disposition Impact
+
 
 SELECT 
   discharge_disposition_id,
@@ -136,7 +151,9 @@ GROUP BY discharge_disposition_id
 ORDER BY readmit_rate DESC
 LIMIT 10;
 
-Diabetes Type vs Readmission
+
+ Diabetes Type vs Readmission
+
 
 SELECT 
   diag_1,
